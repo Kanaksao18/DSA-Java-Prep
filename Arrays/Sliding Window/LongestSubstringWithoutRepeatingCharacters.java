@@ -1,4 +1,4 @@
-//Variable Length Problem
+//Variable Length Problem 
 public int lengthOfLongestSubstring(String s) {
     Set<Character> set = new HashSet<>();
     int left = 0, maxLen = 0;
