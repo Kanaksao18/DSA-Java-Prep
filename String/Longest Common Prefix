@@ -1,0 +1,64 @@
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            while (strs[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) {
+                    return "";
+                }
+            }
+        }
+
+        return prefix;
+    }
+}
+strs = ["flower", "flow", "flight"]
+Step-by-step Execution:
+Initial prefix = "flower"
+
+Loop over i = 1 → "flow":
+Does "flow".indexOf("flower") == 0? ❌ No
+→ "flow" does NOT start with "flower"
+
+Shrink prefix:
+
+"flowe" ❌
+
+"flow" ✅ → "flow".indexOf("flow") == 0
+
+✅ Now prefix = "flow"
+
+Loop over i = 2 → "flight":
+Does "flight".indexOf("flow") == 0? ❌ No
+
+Shrink:
+
+"flo" ❌
+
+"fl" ✅ → "flight".indexOf("fl") == 0
+
+✅ Final prefix = "fl"
+
+✅ Output: "fl"
+⚠️ Edge Case:
+Input:
+java
+Copy
+Edit
+["dog", "racecar", "car"]
+Initial prefix = "dog"
+
+"racecar".indexOf("dog") != 0 → shrink to "do" ❌, then "d" ❌, then ""
+
+Prefix is empty → return ""
+
+✅ Time & Space Complexity:
+Time: O(S), where S = total characters in all strings (worst case: compare every char)
+
+Space: O(1) extra space
+
