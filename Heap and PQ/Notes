@@ -1,0 +1,13 @@
+Min-Heap: Smallest element at top
+
+Max-Heap: Largest element at top
+
+PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+
+Use Cases:
+Find top K elements
+
+Task scheduling
+
+Graph (Dijkstra’s), Huffman Coding
