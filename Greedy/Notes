@@ -1,0 +1,17 @@
+🔶 2. Greedy Algorithms
+❓ What is Greedy?
+Greedy algorithms build up a solution step-by-step, always choosing the locally optimal option, hoping for a globally optimal solution.
+
+✅ No backtracking or checking all possibilities
+✅ Fast, often O(n log n) or O(n)
+⚠️ Doesn't work if the problem lacks Greedy Choice Property
+
+🧠 Strategy Template
+Sort
+
+Iterate
+
+Make greedy choice (max profit, least effort, earliest end)
+
+Update answer/state
+
