@@ -1,0 +1,87 @@
+ 1. What is a String in Java?
+A String is a sequence of characters.
+
+Internally, Java uses a char[] array to represent a String.
+
+Strings are immutable → once created, cannot be changed.
+
+java
+Copy
+Edit
+String s = "Atlassian";
+🔹 2. Common String Methods
+Method	Description	Example
+length()	Get length of the string	s.length()
+charAt(i)	Get character at index i	s.charAt(0) → 'A'
+substring(i, j)	Extract substring [i, j)	"Hello".substring(1,4) → "ell"
+equals(s2)	Compare content	"abc".equals("abc") → true
+toCharArray()	Convert string to char array	"abc".toCharArray()
+indexOf(char)	Get index of first occurrence	"apple".indexOf('p') → 1
+contains("sub")	Check if substring exists	"abcde".contains("cd") → true
+replace(a, b)	Replace characters	"abc".replace('a', 'z') → "zbc"
+split(" ")	Split by space or other regex	"a b c".split(" ") → ["a", "b", "c"]
+trim()	Remove leading/trailing spaces	" abc ".trim() → "abc"
+
+🔹 3. String Comparison
+java
+Copy
+Edit
+String a = "Kanak";
+String b = "Kanak";
+String c = new String("Kanak");
+
+System.out.println(a == b);        // true (both point to same literal)
+System.out.println(a == c);        // false (c is new object)
+System.out.println(a.equals(c));   // ✅ true (compares value)
+✅ Always use .equals() for value comparison.
+
+🔹 4. StringBuilder — Mutable Alternative
+Java String is immutable, but StringBuilder is mutable
+
+Much faster when doing multiple appends/modifications
+
+java
+Copy
+Edit
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World");
+System.out.println(sb.toString()); // "Hello World"
+Method	Use
+append(str)	Add to end
+insert(i, str)	Insert at index
+delete(i, j)	Delete chars [i, j)
+reverse()	Reverse the string
+toString()	Convert back to String
+
+🔹 5. Looping Over a String
+java
+Copy
+Edit
+String str = "atlassian";
+
+for (int i = 0; i < str.length(); i++) {
+    char ch = str.charAt(i);
+    System.out.println(ch);
+}
+
+// Or using for-each loop
+for (char ch : str.toCharArray()) {
+    System.out.println(ch);
+}
+🔹 6. Count Characters (Map/Array)
+java
+Copy
+Edit
+// Using int[26] for lowercase a-z
+int[] freq = new int[26];
+for (char ch : str.toCharArray()) {
+    freq[ch - 'a']++;
+}
+java
+Copy
+Edit
+// Using HashMap
+Map<Character, Integer> map = new HashMap<>();
+for (char ch : str.toCharArray()) {
+    map.put(ch, map.getOrDefault(ch, 0) + 1);
+}
