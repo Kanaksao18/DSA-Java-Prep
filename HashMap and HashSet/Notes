@@ -1,0 +1,89 @@
+ HashMap in Java
+🔹 Declaration:
+java
+Copy
+Edit
+Map<Character, Integer> map = new HashMap<>();
+Map<String, Integer> freq = new HashMap<>();
+🔹 Common Methods:
+Method	Description
+put(key, value)	Inserts or updates value for a key
+get(key)	Returns value or null if key not present
+getOrDefault(key, defaultVal)	Returns value or default if key missing
+containsKey(key)	Returns true if key exists
+remove(key)	Removes the key-value pair
+keySet()	Returns a set of all keys
+values()	Returns a collection of all values
+entrySet()	Returns a set of key-value pairs
+
+🧠 Example:
+java
+Copy
+Edit
+Map<Character, Integer> map = new HashMap<>();
+
+String s = "banana";
+for (char c : s.toCharArray()) {
+    map.put(c, map.getOrDefault(c, 0) + 1);
+}
+
+System.out.println(map);  // {a=3, b=1, n=2}
+🔁 Traversal:
+java
+Copy
+Edit
+for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+    System.out.println(entry.getKey() + " → " + entry.getValue());
+}
+✅ PART 3: HashSet in Java
+🔹 Declaration:
+java
+Copy
+Edit
+Set<Integer> set = new HashSet<>();
+Set<Character> uniqueChars = new HashSet<>();
+🔹 Common Methods:
+Method	Description
+add(value)	Adds value to set (ignores duplicates)
+contains(value)	Returns true if value exists
+remove(value)	Removes value
+size()	Number of unique elements
+isEmpty()	Returns true if set is empty
+
+🧠 Example:
+java
+Copy
+Edit
+Set<Character> set = new HashSet<>();
+
+String s = "banana";
+for (char c : s.toCharArray()) {
+    set.add(c);
+}
+
+System.out.println(set);  // [a, b, n] — unique characters
+🎯 Use Case: Count Unique Elements in Array
+java
+Copy
+Edit
+int[] nums = {1, 2, 2, 3, 4, 4, 5};
+Set<Integer> set = new HashSet<>();
+
+for (int num : nums) {
+    set.add(num);
+}
+
+System.out.println("Unique count: " + set.size());  // Output: 5
+✅ Mastery Check: Quick Practice Problems
+Problem	Topic
+🔠 242. Valid Anagram	HashMap
+🧑‍🤝‍🧑 349. Intersection of Two Arrays	HashSet
+📚 771. Jewels and Stones	HashSet
+🧠 1. Two Sum	HashMap
+🔄 383. Ransom Note	HashMap
+
+🚀 Summary:
+Structure	When to Use
+HashMap<K, V>	Key → Value mapping (frequency, index, etc.)
+HashSet<E>	Uniqueness, membership, duplicates check
+
