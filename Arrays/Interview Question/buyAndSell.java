@@ -15,14 +15,14 @@ class Solution {
         return maxProfit;
     }
 }
-Optimal Solution — Greedy + Two Pointer (O(n))
-💡 Idea:
-Keep track of the minimum price so far
+// Optimal Solution — Greedy + Two Pointer (O(n))
+// 💡 Idea:
+// Keep track of the minimum price so far
 
-At each step, compute the profit: prices[i] - minPrice
+// At each step, compute the profit: prices[i] - minPrice
 
-Keep track of the maximum profit
- Time and Space Complexity
-Metric	Value
-Time	O(n)
-Space	O(1)
+// Keep track of the maximum profit
+//  Time and Space Complexity
+// Metric	Value
+// Time	O(n)
+// Space	O(1)
